@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="contactform.css">
+</head>
+<body>
+    <!--Navbar-->
+    <nav>
+      <ul>
+          <li><a href="index.html" onclick="showMessage('Home')">Home</a></li>
+          <li><a href="#" onclick="showMessage('About')">About</a></li>
+          <li class="dropdown">
+              <a class="dropbtn" href="index.html" onclick="showMessage('Skills')">Skills</a>
+              <div class="dropdown-content">
+                  <a href="#" onclick="showMessage('HTML/CSS')">HTML/CSS</a>
+                  <a href="#" onclick="showMessage('JavaScript')">JavaScript</a>
+                  <a href="#" onclick="showMessage('C/C++')">C/C++</a>
+              </div>
+          </li>
+          <li class="dropdown">
+              <a class="dropbtn" href="index.html" onclick="showMessage('Projects')">Projects</a>
+              <div class="dropdown-content">
+                  <a href="index.html" onclick="showMessage('Resume')">Resume</a>
+                  <a href="resumeindex.html" onclick="showMessage('Interactive Quiz Application')">Interactive Quiz Application</a>
+              </div>
+          </li>
+          <li><a href="contactform.html" onclick="showMessage('Contact')">Contact</a></li>
+      </ul>
+  </nav>
+
+      <!--Content-->
+
+      <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>Get In Touch</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Email Id" required>
+            <input type="tel" id="phone" placeholder="Phone No" required>
+            <textarea id="message" rows="4" placeholder="How can I help you"></textarea>
+            <button type="submit">Send</button><br>
+            <h3>Check out my Social Media</h3>
+            <a href="https://www.linkedin.com/in/dhanush-rajesh-07044b284/"><img src="linkedin.png" alt="LinkedIn" width="50px" height="50px"></a>
+            <p>LinkedIn</p><br>
+            <a href="https://github.com/Dhanu0405/IWD"><img src="github.png" alt="LinkedIn" width="50px" height="50px"></a>
+            <p>Git Hub</p>
+        </form>
+      </div>
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <script>
+        function sendEmail(){
+                Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "dhanushr0405@gmail.com",
+                Password : "DD36741EFDA3FD2D22F59520CC5611CC05CD",
+                To : 'dhanushr0405@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "New Contact form Enquiry",
+                Body : "Name:" + document.getElementById("name").value 
+                + "<br> Email Id: " + document.getElementById("email").value
+                + "<br> Phone No:" + document.getElementById("phone").value
+                + "<br> Message:" + document.getElementById("message").value
+            }).then(
+            message => alert("Message Sent Successfully")
+            );
+        }
+        function showMessage(linkName) {
+            alert("You have clicked the " + linkName + " link!");
+        } 
+      </script>
+</body>
+</html>

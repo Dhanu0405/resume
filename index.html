@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html" onclick="showMessage('Home')">Home</a></li>
+            <li><a href="#" onclick="showMessage('About')">About</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" href="index.html" onclick="showMessage('Skills')">Skills</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showMessage('HTML/CSS')">HTML/CSS</a>
+                    <a href="#" onclick="showMessage('JavaScript')">JavaScript</a>
+                    <a href="#" onclick="showMessage('C/C++')">C/C++</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a class="dropbtn" href="index.html" onclick="showMessage('Projects')">Projects</a>
+                <div class="dropdown-content">
+                    <a href="index.html" onclick="showMessage('Resume')">Resume</a>
+                    <a href="resumeindex.html" onclick="showMessage('Interactive Quiz Application')">Interactive Quiz Application</a>
+                </div>
+            </li>
+            <li><a href="contactform.html" onclick="showMessage('Contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="header">
+            <div class="img-area">
+                <img src="Dhanush_Photo.jpg" alt="Profile Photo">
+            </div>
+            <h1>DHANUSH RAJESH</h1>
+            <h3>Front-End Web Developer</h3>
+        </div>
+
+        <div class="main">
+            <div class="left">
+                <h2>Personal Information</h2>
+                <p><strong>Name:</strong> DHANUSH RAJESH</p>
+                <p><strong>Age:</strong> 18</p>
+                <p><strong>Email:</strong> dhanushr0405@email.com</p>
+                <p><strong>Phone:</strong> 6360857294</p>
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>C/C++</li>
+                    <li>SQL</li>
+                </ul>
+                <h2>Education</h2>
+                <h3>Higher Education</h3>
+                <p>JNV Bangalore Urban, 2021-2023</p> <br>
+                <h3>B.Tech in Computer Science</h3>
+                <p>RV University, 2023-2027</p>
+            </div>
+
+            <div class="right">
+                <h2>Work Experience</h2>
+                <h3>Google</h3>
+                <p><strong>Position:</strong> Software Developer</p>
+                <p><strong>Duration:</strong> 2018-2022</p>
+                <ul>
+                    <li>Implemented responsive design using CSS flexbox and media queries</li>
+                    <li>Collaborated with cross-functional teams to deliver high-quality software products</li>
+                </ul> <br>
+                <h3>Oracle</h3>
+                <p><strong>Position:</strong> Web Developer</p>
+                <p><strong>Duration:</strong> 2016-2018</p>
+                <ul>
+                    <li>Created and maintained websites using HTML, CSS, and JavaScript</li>
+                    <li>Optimized website performance and user experience using best practices</li>
+                    <li>Worked with clients to understand their needs and deliver custom solutions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showMessage(linkName) {
+            alert("You have clicked the " + linkName + " link!");
+        }
+    </script>
+</body>
+
+</html>
